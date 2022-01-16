@@ -1,20 +1,23 @@
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-import java.util.Objects;
+import java.sql.SQLException;
+//import java.util.ArrayList;
 
-public class main extends Application {
+public class main extends Application{
+
+    public static void main(String[] args) {launch(args);}
+
+
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        TicTacToePane pane = new TicTacToePane();
-
-        Scene scene = new Scene(pane ,500 , 500);
-        primaryStage.setTitle("Tic Tac Toe");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
+    public void start(Stage stage) throws Exception {
+        HBox root = FXMLLoader.load(this.getClass().getResource("/com/company/View/LoginView.fxml"));
+        stage.setTitle("Messenger");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
